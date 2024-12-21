@@ -1,0 +1,187 @@
+// 1. Print a Message
+void main() {
+  print("Hello, Dart! Welcome to Programming.");
+}
+
+// 2. Simple Arithmetic Operations
+void main() {
+  int a = 10;
+  int b = 5;
+
+  print("Sum: ${a + b}");
+  print("Difference: ${a - b}");
+  print("Product: ${a * b}");
+  print("Quotient: ${a / b}");
+}
+
+// 3. Check Odd or Even
+void main() {
+  int num = 11;
+
+  if (num % 2 == 0) {
+    print("The number is Even.");
+  } else {
+    print("The number is Odd.");
+  }
+}
+
+// 4. Simple Calculator Using Functions
+void main() {
+  int a = 8, b = 4;
+
+  print("Addition: ${add(a, b)}");
+  print("Subtraction: ${subtract(a, b)}");
+  print("Multiplication: ${multiply(a, b)}");
+  print("Division: ${divide(a, b)}");
+}
+
+int add(int a, int b) => a + b;
+int subtract(int a, int b) => a - b;
+int multiply(int a, int b) => a * b;
+double divide(int a, int b) => a / b;
+
+// 5. Fibonacci Series
+void main() {
+  int n1 = 0, n2 = 1, n3;
+
+  print("Fibonacci Series:");
+  print("$n1 $n2");
+
+  for (int i = 2; i < 10; i++) {
+    n3 = n1 + n2;
+    print("$n3");
+    n1 = n2;
+    n2 = n3;
+  }
+}
+
+// 6. Working with Lists
+void main() {
+  List<int> numbers = [5, 3, 8, 1, 2];
+  numbers.add(7);
+  numbers.sort();
+  print("Sorted List: $numbers");
+}
+
+// 7. Working with Sets
+void main() {
+  Set<int> numbers = {1, 2, 3, 4};
+  numbers.add(5);
+  numbers.remove(2);
+  print("Final Set: $numbers");
+}
+
+// 8. Working with Maps
+void main() {
+  Map<String, dynamic> info = {'name': 'Alice', 'age': 25, 'city': 'New York'};
+  info['country'] = 'USA';
+  info['age'] = 26;
+  print("Updated Map: $info");
+}
+
+// 9. Bubble Sort
+void main() {
+  List<int> numbers = [5, 2, 9, 1, 5, 6];
+  for (int i = 0; i < numbers.length - 1; i++) {
+    for (int j = 0; j < numbers.length - 1 - i; j++) {
+      if (numbers[j] > numbers[j + 1]) {
+        int temp = numbers[j];
+        numbers[j] = numbers[j + 1];
+        numbers[j + 1] = temp;
+      }
+    }
+  }
+  print("Sorted List: $numbers");
+}
+
+// 10. Binary Search
+void main() {
+  List<int> numbers = [1, 3, 5, 7, 9, 11];
+  int target = 7;
+
+  int left = 0, right = numbers.length - 1;
+  while (left <= right) {
+    int mid = (left + right) ~/ 2;
+    if (numbers[mid] == target) {
+      print("Number found at index: $mid");
+      return;
+    } else if (numbers[mid] < target) {
+      left = mid + 1;
+    } else {
+      right = mid - 1;
+    }
+  }
+  print("Number not found.");
+}
+
+// 11. Class and Object
+class Car {
+  String brand;
+  String model;
+  int year;
+
+  Car(this.brand, this.model, this.year);
+
+  void displayInfo() {
+    print("Car Details:");
+    print("Brand: $brand");
+    print("Model: $model");
+    print("Year: $year");
+  }
+}
+
+void main() {
+  Car car = Car("Toyota", "Corolla", 2020);
+  car.displayInfo();
+}
+
+// 12. Inheritance
+class Animal {
+  void makeSound() {
+    print("Animal makes a sound");
+  }
+}
+
+class Dog extends Animal {
+  @override
+  void makeSound() {
+    print("Dog barks");
+  }
+}
+
+void main() {
+  Animal animal = Animal();
+  animal.makeSound();
+
+  Dog dog = Dog();
+  dog.makeSound();
+}
+
+// 13. Optional Parameters
+void greet(String name, [String message = "Welcome"]) {
+  print("Hello $name, $message");
+}
+
+void main() {
+  greet("Alice");
+  greet("Bob", "Good Morning");
+}
+
+// 14. Anonymous Function
+void main() {
+  List<int> numbers = [1, 2, 3, 4, 5];
+  numbers.forEach((number) {
+    print("Square of $number: ${number * number}");
+  });
+}
+
+// 15. Palindrome Checker
+void main() {
+  String input = "madam";
+
+  if (input == input.split('').reversed.join('')) {
+    print("The string '$input' is a palindrome.");
+  } else {
+    print("The string '$input' is not a palindrome.");
+  }
+}
